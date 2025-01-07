@@ -20,11 +20,11 @@ namespace RSA_Elgamal.Resources
                 if (bitlength == 1024) sobitcat = 1000; //Nếu khóa dài 1024 bit-> cắt 1000 bit
                 else sobitcat = 2000; //ngược lại cắt bản rõ 2000 but
                 StringBuilder bit = new StringBuilder();
-                
-                FileStream fdich = new FileStream(filenguon,FileMode.Open); //Đọc file nhị phân
+
+                FileStream fdich = new FileStream(filenguon, FileMode.Open); //Đọc file nhị phân
                 int dau = 0;
                 long dich = fdich.Length;
-                while(dau < dich)
+                while (dau < dich)
                 {
                     bit.Append(Convert.ToString(fdich.ReadByte(), 2).PadLeft(8, '0')); //Đọc hết file chuyển về nhị phân lưu vào string bit
                     dau++;
@@ -35,21 +35,21 @@ namespace RSA_Elgamal.Resources
                 StringBuilder bitghi = new StringBuilder();
                 int i;
                 BigInteger tam, ghi;
-                for(i = 0; i < dich;i++) //Mã hóa
+                for (i = 0; i < dich; i++) //Mã hóa
                 {
                     tam = math.BinaryToNumber(bitthuong.Substring(sobitcat * i, sobitcat)); //Chuyển từ nhị phân thành số 
                     ghi = math.Fast_Exponent(tam, pk, N); //Thực hiện mã hóa
                     bitghi.Append(math.BigIntegertoBinary(ghi).PadLeft(bitlength, '0')); //Mã hóa xong chuyển số thành lại nhị phân
                 }
                 //TH2: Nếu bản rõ là 4320 bit mà ta cắt 1000 bit thì được 4 lần, còn 320 bit là phần lẻ, được xử lý ở dưới
-                tam = math.BinaryToNumber(bitthuong.Substring(sobitcat * i, (int)bitthuong.Length - (sobitcat*i)));
+                tam = math.BinaryToNumber(bitthuong.Substring(sobitcat * i, (int)bitthuong.Length - (sobitcat * i)));
                 ghi = math.Fast_Exponent(tam, pk, N);
                 bitghi.Append(math.BigIntegertoBinary(ghi).PadLeft(bitlength, '0'));
                 FileStream ghif = new FileStream(filedich, FileMode.Create);
                 string bitghiv = bitghi.ToString();
-                for(i = 0; i < bitghiv.Length / 8;i++) //Mã hóa xong, ghi vào file
+                for (i = 0; i < bitghiv.Length / 8; i++) //Mã hóa xong, ghi vào file
                 {
-                    ghif.WriteByte(Convert.ToByte(bitghiv.Substring(8 * i, 8),2));
+                    ghif.WriteByte(Convert.ToByte(bitghiv.Substring(8 * i, 8), 2));
                 }
                 ghif.Close();
                 return "Encrypt File Successfully";
@@ -62,7 +62,7 @@ namespace RSA_Elgamal.Resources
         }
         public string giaima(string filenguon, string filedich, BigInteger sk, BigInteger n, int bitlength)
         {
-           
+
             try
             {
                 //Khai báo số bit cắt
@@ -72,7 +72,7 @@ namespace RSA_Elgamal.Resources
                 FileStream fnguon = new FileStream(filenguon, FileMode.Open);
                 StringBuilder dich = new StringBuilder();
                 long dem = 0, len = fnguon.Length;
-                while(dem < len) //Nếu chưa đọc hết file
+                while (dem < len) //Nếu chưa đọc hết file
                 {
                     dem++;
                     dich.Append(Convert.ToString(fnguon.ReadByte(), 2).PadLeft(8, '0')); //Chuyển hết về dạng nhị phân, đọc được bao nhiêu chuyển về dạng nhị phân
@@ -115,9 +115,9 @@ namespace RSA_Elgamal.Resources
                         bitro.Append(bithientai);
                     }
                 }
-                    FileStream filedi = new FileStream(filedich, FileMode.Create); //Đọc file nhị phân
+                FileStream filedi = new FileStream(filedich, FileMode.Create); //Đọc file nhị phân
                 string bitroghi = bitro.ToString();
-                for(int i = 0; i < bitroghi.Length/8;i++)
+                for (int i = 0; i < bitroghi.Length / 8; i++)
                 {
                     filedi.WriteByte(Convert.ToByte(bitroghi.Substring(8 * i, 8), 2)); //Ghi lại bản rõ vào file
                 }

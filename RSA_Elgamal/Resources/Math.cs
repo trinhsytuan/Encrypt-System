@@ -44,7 +44,7 @@ namespace RSA_Elgamal.Resources
 
             foreach (char c in value)
             {
-                
+
                 res <<= 1; //Tương đương với res = res * 2;
                 res += c == '1' ? 1 : 0; //Nếu c bằng 1 thi cộng 1, nếu sai cộng 0
             }
@@ -134,10 +134,11 @@ namespace RSA_Elgamal.Resources
                 do
                 {
                     a = RandomInRange(num - 2); //Chọn 1 số ngẫu nhiên không vượt quá num - 2
-                } while (a < 2 || a > num - 2); 
+                } while (a < 2 || a > num - 2);
                 BigInteger x = Fast_Exponent(a, d, num); //Tính a^d mod nuum
                 if ((x == 1) || (x == (num - 1))) continue; //Nếu bằng 1 hoặc num-1 thì nghi ngờ là snt, chuyển qua bước lặp khác
-                for(j = 0; j < s; j++) {
+                for (j = 0; j < s; j++)
+                {
                     x = Fast_Exponent(x, 2, num);
                     if (x == (num - 1)) break; //nghi ngờ là snt
                     else return false;

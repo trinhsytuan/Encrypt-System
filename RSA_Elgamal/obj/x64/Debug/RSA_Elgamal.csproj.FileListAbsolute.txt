@@ -19,3 +19,13 @@ C:\Users\Admin\Desktop\RSA_Elgamal\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.csproj.
 C:\Users\Admin\Desktop\RSA_Elgamal\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.exe
 C:\Users\Admin\Desktop\RSA_Elgamal\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.pdb
 C:\Users\Admin\source\repos\RSA_Elgamal\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\bin\x64\Debug\RSA_Elgamal.exe.config
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\bin\x64\Debug\RSA_Elgamal.exe
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\bin\x64\Debug\RSA_Elgamal.pdb
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.csproj.AssemblyReference.cache
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.Form1.resources
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.Properties.Resources.resources
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.csproj.GenerateResource.cache
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.csproj.CoreCompileInputs.cache
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.exe
+C:\Users\Tuan\Documents\Encrypt-System\RSA_Elgamal\obj\x64\Debug\RSA_Elgamal.pdb
